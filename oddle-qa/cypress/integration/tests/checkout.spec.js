@@ -10,7 +10,7 @@ context('Actions', () => {
   })
 
 TestFilter.any(['smoke', 'regression', ''], () => {
-  it.skip('Verify donation options displayed on checkout page', () => {
+  it('Verify donation options displayed on checkout page', () => {
     cy.visit(ActionsConstant.checkout_url);
     CheckoutPage.verify_donation_options("Donate $5.00 once")
     CheckoutPage.verify_donation_options("Donate $15.00 once")
@@ -19,27 +19,18 @@ TestFilter.any(['smoke', 'regression', ''], () => {
 })
 
 TestFilter.any(['smoke', 'regression', ''], () => {
-  it.skip('Verify field validations on stripe checkout page', () => {
+  it('Verify field validations on stripe checkout page', () => {
     cy.visit(ActionsConstant.checkout_session_url);
     CheckoutPage.verify_donation_amount("One-time Donation - 5")
     CheckoutPage.click_pay()
     CheckoutPage.verify_required_fields_alert()
-    CheckoutPage.enter_details(ActionsConstant.invalid_email,"1",ActionsConstant.card_cvv,ActionsConstant.card_expiry,"")
+    CheckoutPage.enter_details(ActionsConstant.invalid_email,"1",ActionsConstant.card_cvv,ActionsConstant.card_expiry,ActionsConstant.billing_name)
     CheckoutPage.verify_error("Your email is incomplete.")
     CheckoutPage.verify_error("Your card number is incomplete.")
-    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_with_3DS,ActionsConstant.card_cvv,"02/19","")
+    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_with_3DS,ActionsConstant.card_cvv,"02/19",ActionsConstant.billing_name)
     CheckoutPage.verify_error("Your card's expiry year is in the past.")
-    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_with_3DS,"1",ActionsConstant.card_expiry,"")
+    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_with_3DS,"1",ActionsConstant.card_expiry,ActionsConstant.billing_name)
     CheckoutPage.verify_error("Your card's security code is incomplete.")
-  })
-})
-
-TestFilter.any(['smoke', 'regression', ''], () => {
-  it.skip('Verify payment is successful on using card without 3DS enabled', () => {
-    cy.visit(ActionsConstant.checkout_session_url);
-    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_without_3DS,ActionsConstant.card_cvv,ActionsConstant.card_expiry,ActionsConstant.billing_name)
-    CheckoutPage.click_pay()
-    CheckoutPage.verify_payment_success()
   })
 })
 
@@ -54,6 +45,14 @@ TestFilter.any(['smoke', 'regression', ''], () => {
     CheckoutPage.click_pay()
     cy.get('@windowOpen').get('#challengeFrame').its('0.contentDocument.body').find('#test-source-authorize-3ds').click()
     CheckoutPage.click_button("Complete")
+  })
+})
+TestFilter.any(['smoke', 'regression', ''], () => {
+  it('Verify payment is successful on using card without 3DS enabled', () => {
+    cy.visit(ActionsConstant.checkout_session_url);
+    CheckoutPage.enter_details(ActionsConstant.email,ActionsConstant.card_number_without_3DS,ActionsConstant.card_cvv,ActionsConstant.card_expiry,ActionsConstant.billing_name)
+    CheckoutPage.click_pay()
+    CheckoutPage.verify_payment_success()
   })
 })
 

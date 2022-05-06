@@ -6,7 +6,7 @@ const ActionsConstant = {
     card_expiry: "02/24",
     billing_name: "Vinayak Kaladhar",
     card_number_with_3DS: "4000 0000 0000 3220",
-    checkout_session_url: "https://checkout.stripe.com/pay/ppage_1KwJTiIuKQ0PCijjj1G9YdpS#fidkdWxOYHwnPyd1blpxYHZxWlF3PWppUW5hQ2trT1N8cnJtS1VNcmtNTjU1TW5NUzFxa1UnKSdobGF2Jz9%2BJ2JwbGEnPyc9YT1gMDwxYCg2ZDdkKDFgZzMoPWMyYCgxPT09MGYyYTQ1NDQzNTc8NmAnKSdocGxhJz8nNTwxNzRnMTwoY2NhYSgxMzxkKD01M2coMzU8PT1kYTU0NTEwPTU0Zzw1JykndmxhJz8nPTJkMTRjZmAoMzJkYSgxNGYzKDw2NGQoZGY9Mmc0NDU3MDBgYzQ2N2BnJ3gpJ2dgcWR2Jz9eWCknaWR8anBxUXx1YCc%2FJ3Zsa2JpYFpscWBoJyknd2BjYHd3YHdKd2xibGsnPydtcXF1dj8qKnZxd2x1YCh2ZGh1aWB2K2JscW1wZytsaicpJ2lqZmRpYCc%2Fa3BpaXgl",
+    checkout_session_url: "https://checkout.stripe.com/pay/ppage_1KwLrkIuKQ0PCijjrYsLcxoh#fidkdWxOYHwnPyd1blpxYHZxWlF3PWppUW5hQ2trT1N8cnJtS1VNcmtNTjU1TW5NUzFxa1UnKSdobGF2Jz9%2BJ2JwbGEnPydLRCcpJ2hwbGEnPyc1PDE3NGcxPChjY2FhKDEzPGQoPTUzZygzNTw9PWRhNTQ1MTA9NTRnPDUnKSd2bGEnPydjYTFgZjxgPChjMmA9KDExZ2coZ2FhNig1PTwyZGEzZDZmMjE3MWZkMj0neCknZ2BxZHYnP15YKSdpZHxqcHFRfHVgJz8ndmxrYmlgWmxxYGgnKSd3YGNgd3dgd0p3bGJsayc%2FJ21xcXV2PyoqdnF3bHVgKHZkaHVpYHYrYmxxbXBnK2xqJyknaWpmZGlgJz9rcGlpeCUl",
     checkout_url: "https://stripe-samples.github.io/github-pages-stripe-checkout/"
     
 }
