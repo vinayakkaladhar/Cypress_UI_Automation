@@ -1,5 +1,5 @@
 {
-  "projectId": "2eb3sy",
+  "projectId": "amduar",
   "reporter": "cypress-multi-reporters",
   "reporterOptions": {
     "configFile": "cypress/support/cypress-multi-reporters.json"
