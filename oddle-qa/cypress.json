@@ -8,5 +8,6 @@
     "RETRIES": 2,
     "allureResultsPath": "allure-results",
     "allure": true
-  }
+  },
+  "experimentalSessionAndOrigin": true
 }

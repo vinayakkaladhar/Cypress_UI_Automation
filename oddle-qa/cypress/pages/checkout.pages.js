@@ -67,10 +67,9 @@ var ActionsPage = {
     },
 
     verify_payment_success: function() {
-        cy.wait(2000)
         cy.xpath(ActionsLocator.paymentSuccess()).should('be.visible')
     },
-    enter_details: function(email,cardNumber, cardCvv, cardExpiry, billingName) {
+    enter_details: function(email,cardNumber,cardCvv,cardExpiry,billingName) {
         cy.get(ActionsLocator.enter_email()).clear().type(email)
         cy.get(ActionsLocator.enter_card_number()).clear().type(cardNumber)
         cy.get(ActionsLocator.enter_card_cvv()).clear().type(cardCvv)
